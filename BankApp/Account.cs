@@ -9,10 +9,11 @@ namespace BankApp
     /// <summary>
     /// This is about a bank account and can be written on multiple lines
     /// </summary>
+
     class Account
     {
         #region Properties
-        public int AccountNumber { get; private set; }
+        public int AccountNumber { get; private set;}
         public string EmailAddress { get; set; }
         public string AccountName { get; set; }
         public string AccountType { get; set; }
@@ -35,10 +36,8 @@ namespace BankApp
 
         }
 
+
         #endregion
-
-
-
 
     }
 }
