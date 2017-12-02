@@ -11,12 +11,29 @@ namespace BankApp
         static void Main(string[] args)
         {
             //reference, object, instance of a class
-            var account = new Account();
-            account.EmailAddress = "test@test.com";
-            account.AccountType = "Checking";
-           
+            var account = new Account
+            {
+                AccountName = "Mychecking",
+                AccountType = TypeOfAccount.Checking,
+                EmailAddress = "test@test.com"
+            };
+
             account.Deposit(100.10M);
-            Console.WriteLine($"{account.Balance}");
+            Console.WriteLine($"AccountNumber:{account.AccountNumber}," +
+                $"EmailAddress:{account.EmailAddress},Balance:{account.Balance}," +
+                $"AccountType:{account.AccountType}");
+
+
+            var account2 = new Account
+            {
+                EmailAddress = "test@test.com",
+                AccountType = TypeOfAccount.Savings
+            };
+          
+            account2.Deposit(100.10M);
+            Console.WriteLine($"AccountNumber:{account2.AccountNumber}," +
+                $"EmailAddress:{account2.EmailAddress},Balance:{account2.Balance}," +
+                $"AccountType:{account2.AccountType}");
 
         }
     }
